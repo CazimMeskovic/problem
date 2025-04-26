@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.reviews-section {
+  text-align: center;
+}
+
+.reviews-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.black {
+  color: black;
+  font-weight: 700;
+}
+
+.yellow {
+  color: #fbbc04; /* žuta boja */
+  font-weight: 700;
+}
+
+.cards-container {
+  position: relative;
+  width: 350px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 40px rgba(255, 193, 7, 0.6);
+  opacity: 0;
+  transform: rotate(0deg) translateY(0);
+  transition: all 0.6s ease;
+  pointer-events: none;
+}
+
+.card .stars {
+  color: #fbbc04;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.card.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: rotate(-2deg);
+  z-index: 4;
+}
+
+.card:nth-child(2) {
+  transform: rotate(2deg) translateY(20px);
+  opacity: 0.6;
+  z-index: 3;
+}
+
+.card:nth-child(3) {
+  transform: rotate(-1deg) translateY(40px);
+  opacity: 0.4;
+  z-index: 2;
+}
+
+.card:nth-child(4) {
+  transform: rotate(1deg) translateY(60px);
+  opacity: 0.2;
+  z-index: 1;
+}
