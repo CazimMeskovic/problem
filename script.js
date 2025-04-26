@@ -1,8 +1,19 @@
 const cards = document.querySelectorAll('.card');
 let current = 0;
 
+function showCard(index) {
+  cards.forEach((card, i) => {
+    card.classList.remove('active', 'stacked');
+
+    if (i === index) {
+      card.classList.add('active');
+    } else if (i < index) {
+      card.classList.add('stacked');
+    }
+  });
+}
+
 setInterval(() => {
-  cards[current].classList.remove('active');
   current = (current + 1) % cards.length;
-  cards[current].classList.add('active');
-}, 3000); // svakih 3 sekunde
+  showCard(current);
+}, 3000); // Svakih 3 sekunde mijenjamo
